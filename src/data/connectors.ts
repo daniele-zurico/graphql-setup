@@ -1,5 +1,5 @@
 // at the top with imports:
-let mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 // somewhere in the middle:
 mongoose.Promise = global.Promise;

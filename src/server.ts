@@ -23,8 +23,8 @@ graphQLServer.use('/graphql', bodyParser.json(), graphqlExpress({ schema }));
 graphQLServer.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }));
 
 //rest api instead
-graphQLServer.get('/users', (req, res, next) => {
-    User.find({}).exec((_err, _res) => res.json(_res));
+graphQLServer.get('/users', (req: any, res: any, next: any) => {
+    User.find({}).exec((_err: any, _res: any) => res.json(_res));
 });
 
 graphQLServer.listen(GRAPHQL_PORT, () =>
