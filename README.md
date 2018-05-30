@@ -8,14 +8,14 @@ https://treehouse.github.io/installation-guides/mac/mongo-mac.html
 
 - npm install
 
-# available commands:
+# available commands
 
 ## to run in your local environment:
 `npm run dev`
 
 it will automatically rerun your code all the time you save and will check for tslint errors and formatting style errors
 
-### graphiQl:
+### graphiQl
 - http://localhost:3000/graphiql
 here you can run some queries:
 
@@ -65,5 +65,5 @@ mutation {
 I create also a rest api to retrieve all the users:
 `http://localhost:3000/users`
 
-## to build in a production environment:
+## to build in a production environment
 `npm run build`
