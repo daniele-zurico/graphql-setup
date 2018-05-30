@@ -9,14 +9,14 @@ const resolvers = {
     },
     Mutation: {
         addUser(root, args) {
-            let user = new users_1.User({ name: args.name, surname: args.surname });
+            const user = new users_1.User({ name: args.name, surname: args.surname });
             return user.save();
         },
         deleteUser(root, args) {
             return users_1.User.deleteOne({ _id: args.id });
         },
         updateUser(root, args) {
-            let _tempUser = Object.assign({}, args);
+            const _tempUser = Object.assign({}, args);
             delete _tempUser.id;
             return users_1.User.updateOne({ _id: args.id }, { $set: _tempUser });
         }

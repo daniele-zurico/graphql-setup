@@ -1,36 +1,68 @@
-# apollo-tutorial-kit
+# Installation:
 
-Starting point for the Apollo GraphQL Server tutorial.
+- install mongodb
+https://treehouse.github.io/installation-guides/mac/mongo-mac.html
 
-Follow along with the tutorial in the blog post: [How to build a GraphQL server](https://medium.com/apollo-stack/tutorial-building-a-graphql-server-cddaa023c035#.wy5h1htxs). If you want to skip ahead to the solution, check out the [server-tutorial-solution](https://github.com/apollographql/apollo-tutorial-kit/tree/server-tutorial-solution) branch of this repo.
+- create a db called `graphExample`
+- create a collection called `users` that contains `name` and `surname`
 
-Up-to-date documentation and explanations can be found in the [Apollo Server docs](https://www.apollographql.com/docs/apollo-server/)
+- npm install
 
-## Getting started
+# available commands:
 
-```bash
-git clone https://github.com/apollostack/apollo-starter-kit
-cd apollo-starter-kit
-npm install
-npm start
+- to run in your local environment:
+`npm run dev`
+
+it will automatically rerun your code all the time you save and will check for tslint errors and formatting style errors
+
+you have access to the graphiQl:
+- http://localhost:3000/graphiql
+here you can run some queries:
+
+1. fetch all the users
 ```
-
-Then open [http://localhost:3000/graphiql](http://localhost:3000/graphiql)
-
-When you paste this on the left side of the page:
-
-```graphql
-{
-  testString
-}
-```
-
-and hit the play button (cmd-return), then you should get this on the right side:
-
-```json
-{
-  "data": {
-    "testString": "It works!"
+query{
+  allUsers {
+    id
+    name
+    surname
   }
 }
 ```
+
+2. create a new user
+````
+mutation {
+  addUser(name: "adrian", surname: "goHenry") {
+    name
+    surname
+  }
+}
+```
+
+3. delete existing user
+```
+mutation {
+  deleteUser(id: "5b0d6ad0b4d7720413da7ebe") {
+    name
+    surname
+  }
+}
+```
+
+4. update existing user
+```
+mutation {
+  updateUser(id: "5b0d61e636c7c0f9c65947cc", name: "daniele", surname: "zurico") {
+    _id
+    name
+    surname
+  }
+}
+```
+
+I create also a rest api to retrieve all the users:
+`http://localhost:3000/users`
+
+- to build in a production environment:
+`npm run build`
