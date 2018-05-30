@@ -2,9 +2,9 @@ import { ApolloServer } from 'apollo-server';
 import { registerServer } from 'apollo-server-express';
 import express from 'express';
 import mongoose from 'mongoose';
-import { User } from './data/models/users';
-import resolvers from './data/resolvers/resolvers';
-import typeDefs from './data/schemas/schema';
+import { User } from './models/users';
+import resolvers from './resolvers/resolvers';
+import typeDefs from './schemas/schema';
 
 
 const MONGO_PORT = 27017;
