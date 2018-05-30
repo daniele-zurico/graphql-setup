@@ -15,7 +15,7 @@ https://treehouse.github.io/installation-guides/mac/mongo-mac.html
 
 it will automatically rerun your code all the time you save and will check for tslint errors and formatting style errors
 
-you have access to the graphiQl:
+### graphiQl:
 - http://localhost:3000/graphiql
 here you can run some queries:
 
@@ -61,6 +61,7 @@ mutation {
 }
 ```
 
+### REST
 I create also a rest api to retrieve all the users:
 `http://localhost:3000/users`
 
