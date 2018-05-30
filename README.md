@@ -10,7 +10,7 @@ https://treehouse.github.io/installation-guides/mac/mongo-mac.html
 
 # available commands:
 
-- to run in your local environment:
+## to run in your local environment:
 `npm run dev`
 
 it will automatically rerun your code all the time you save and will check for tslint errors and formatting style errors
@@ -31,7 +31,7 @@ query{
 ```
 
 2. create a new user
-````
+```
 mutation {
   addUser(name: "adrian", surname: "goHenry") {
     name
@@ -64,5 +64,5 @@ mutation {
 I create also a rest api to retrieve all the users:
 `http://localhost:3000/users`
 
-- to build in a production environment:
+## to build in a production environment:
 `npm run build`
