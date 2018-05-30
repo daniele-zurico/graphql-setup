@@ -1,9 +1,7 @@
-import { graphiqlExpress, graphqlExpress } from 'apollo-server-express';
-import bodyParser from 'body-parser';
+import { graphiqlExpress } from 'apollo-server-express';
 import express from 'express';
 import mongoose from 'mongoose';
 import { User } from './data/models/users';
-import schema from './data/schema';
 
 
 const GRAPHQL_PORT = 3000;
