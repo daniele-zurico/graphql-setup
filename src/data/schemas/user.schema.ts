@@ -1,6 +1,6 @@
 import { gql } from 'apollo-server';
 
-const userDefs = gql`
+const userDefs: string = gql`
     type Query {
       allUsers: [User],
       hello: String

@@ -1,5 +1,5 @@
 import userDefs from './user.schema';
 
-const typeDefs = [userDefs];
+const typeDefs: [string] = [userDefs];
 
 export default typeDefs;
