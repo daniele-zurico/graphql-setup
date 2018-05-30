@@ -1,5 +1,4 @@
 import { ApolloServer } from 'apollo-server';
-import { registerServer } from 'apollo-server-express';
 import express from 'express';
 import mongoose from 'mongoose';
 import { User } from './models/users';
@@ -19,7 +18,7 @@ const app = express();
 
 // GraphQL
 const server = new ApolloServer({ typeDefs, resolvers });
-registerServer({ server, app });
+
 server.listen().then(({ url }) => {
     console.log(`🚀 Server ready at ${url}`);
 });
