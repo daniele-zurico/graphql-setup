@@ -1,10 +1,8 @@
 import { ApolloServer } from 'apollo-server';
 import express from 'express';
 import mongoose from 'mongoose';
-import { User } from './models/users';
 import resolvers from './resolvers/resolvers';
 import typeDefs from './schemas/schema';
-
 
 const MONGO_PORT = 27017;
 const MONGO_URL = 'localhost';
@@ -21,9 +19,4 @@ const server = new ApolloServer({ typeDefs, resolvers });
 
 server.listen().then(({ url }) => {
     console.log(`🚀 Server ready at ${url}`);
-});
-
-// Rest api instead
-app.get('/users', (req: any, res: any, next: any) => {
-    User.find({}).exec((userErr: any, userRes: any) => res.json(userRes));
 });
