@@ -1,6 +1,6 @@
-import { User } from './models/users';
+import { User } from '../models/users';
 
-const resolvers = {
+const userResolver = {
     Mutation: {
         addUser(root: any, args: any) {
             const user = new User({name: args.name, surname: args.surname});
@@ -22,4 +22,4 @@ const resolvers = {
     }
 };
 
-export default resolvers;
+export default userResolver;

@@ -1,31 +1,30 @@
-import { graphiqlExpress } from 'apollo-server-express';
+import { ApolloServer } from 'apollo-server';
+import { registerServer } from 'apollo-server-express';
 import express from 'express';
 import mongoose from 'mongoose';
 import { User } from './data/models/users';
+import resolvers from './data/resolvers/resolvers';
+import typeDefs from './data/schemas/schema';
 
 
-const GRAPHQL_PORT = 3000;
 const MONGO_PORT = 27017;
 const MONGO_URL = 'localhost';
 const dbName = 'graphExample';
-
 mongoose.Promise = global.Promise;
 mongoose.connect(`mongodb://${MONGO_URL}:${MONGO_PORT}/${dbName}`, {
     useMongoClient: true
 });
 
-const graphQLServer = express();
+const app = express();
 
 // GraphQL
-graphQLServer.use('/graphiql', graphiqlExpress({endpointURL: '/graphql'}));
-
-// Rest api instead
-graphQLServer.get('/users', (req: any, res: any, next: any) => {
-    User.find({}).exec((userErr: any, userRes: any) => res.json(userRes));
+const server = new ApolloServer({ typeDefs, resolvers });
+registerServer({ server, app });
+server.listen().then(({ url }) => {
+    console.log(`🚀 Server ready at ${url}`);
 });
 
-graphQLServer.listen(GRAPHQL_PORT, () =>
-    console.log(
-        `GraphiQL is now running on http://localhost:${GRAPHQL_PORT}/graphiql`
-    )
-);
+// Rest api instead
+app.get('/users', (req: any, res: any, next: any) => {
+    User.find({}).exec((userErr: any, userRes: any) => res.json(userRes));
+});

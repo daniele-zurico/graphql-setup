@@ -1,11 +1,11 @@
-import { makeExecutableSchema } from 'graphql-tools';
-import resolvers from './resolvers';
-const typeDefs = `
+import { gql } from 'apollo-server';
+
+const typeDefs = gql`
     type Query {
-      allUsers: [User]
+      allUsers: [User],
+      hello: String
     }
     type Mutation {
-      # A mutation to add a new channel to the list of channels
       addUser(name: String!, surname: String!): User,
       deleteUser(id: String!): User,
       updateUser(id: String!, name: String, surname: String): User
@@ -17,5 +17,4 @@ const typeDefs = `
     }
 `;
 
-const schema = makeExecutableSchema({ typeDefs, resolvers });
-export default schema;
+export default typeDefs;
