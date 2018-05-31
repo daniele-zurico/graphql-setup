@@ -24,7 +24,7 @@ https://prettier.io/docs/en/editors.html
 
 
 ### graphiQl
-- http://localhost:3000/graphiql
+- http://localhost:4000
 here you can run some queries:
 
 1. fetch all the users
@@ -68,10 +68,3 @@ mutation {
   }
 }
 ```
-
-### REST
-I create also a rest api to retrieve all the users:
-`http://localhost:3000/users`
-
-## to build in a production environment
-`npm run build`
