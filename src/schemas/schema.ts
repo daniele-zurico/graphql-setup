@@ -1,4 +1,4 @@
-import userDefs from './user.schema';
+import userDefs from "./user.schema";
 
 const typeDefs: [string] = [userDefs];
 

@@ -17,8 +17,8 @@
     "@types/mongoose": "^5.0.15",
     "graphql-typings": "0.0.1-beta-2",
     "nodemon": "^1.17.5",
-    "tslint": "^5.10.0",
-    "tslint-config-prettier": "^1.13.0"
+    "prettier": "1.13.3",
+    "tslint": "^5.10.0"
   },
   "scripts": {
     "dev": "nodemon --watch src && tslint-check",
