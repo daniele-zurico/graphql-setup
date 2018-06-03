@@ -15,6 +15,7 @@
     "no-null-keyword": true,
     "prefer-const": true,
     "jsdoc-format": true,
-    "no-console": [false, "log"]
+    "no-console": [false, "log"],
+    "no-any": false
   }
 }

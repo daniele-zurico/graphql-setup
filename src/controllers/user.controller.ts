@@ -11,7 +11,8 @@ const userController = {
 		delete tempUser.id;
 		return User.updateOne({ _id: args.id }, { $set: tempUser });
 	},
-	users: () => User.find({})
+	users: (root: any, args: any) => User.find({}),
+	user: (token: string) => User.find({token: token})
 };
 
 export { userController };

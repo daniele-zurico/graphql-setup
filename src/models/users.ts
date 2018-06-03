@@ -1,6 +1,7 @@
-import mongoose from "mongoose";
+import mongoose, { Types } from "mongoose";
 
 const UserSchema = new mongoose.Schema({
+	_id: String,
 	name: String,
 	surname: String
 });

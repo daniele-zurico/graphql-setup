@@ -1,5 +1,6 @@
-import userDefs from "./user.schema";
+import helloSchema from "./hello.schema";
+import userSchema from "./user.schema";
 
-const typeDefs: [string] = [userDefs];
+const schemas = [userSchema, helloSchema];
 
-export default typeDefs;
+export default schemas;
