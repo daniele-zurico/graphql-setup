@@ -10,6 +10,10 @@ import { userController } from "./controllers/controllers";
 const MONGO_PORT = 27017;
 const MONGO_URL = "localhost";
 const dbName = "graphExample";
+
+// help to debug mongoose
+mongoose.set("debug", true);
+
 mongoose.connect(`mongodb://${MONGO_URL}:${MONGO_PORT}/${dbName}`);
 
 const app = express();

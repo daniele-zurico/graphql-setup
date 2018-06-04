@@ -15,7 +15,6 @@ const userResolver = {
 	},
 	Query: {
 		allUsers(root: any, args: any, context: any) {
-			console.log("Context:", context);
 			if (!context.user) throw new AuthenticationError("you must be logged in");
 			return userController.users(root, args);
 		}
