@@ -7,7 +7,6 @@ import { mergeSchemas } from "graphql-tools";
 import schemas from "./schemas/schema";
 import { userController } from "./controllers/controllers";
 
-
 const MONGO_PORT = 27017;
 const MONGO_URL = "localhost";
 const dbName = "graphExample";
@@ -25,12 +24,12 @@ const server = new ApolloServer({
 	schema,
 	context: async (req: any) => {
 		// mock token
-		const token = '1234';
+		const token = "1234";
 
 		// try to retrieve a user with the token
 		const user = await userController.user(token);
 		if (user.length > 0) {
-			return {user};
+			return { user };
 		}
 	}
 });

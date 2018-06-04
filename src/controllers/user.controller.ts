@@ -1,4 +1,5 @@
 import { User } from "../models/users";
+import { Types } from "mongoose";
 
 const userController = {
 	addUser: (root: any, args: any) => {
@@ -12,7 +13,7 @@ const userController = {
 		return User.updateOne({ _id: args.id }, { $set: tempUser });
 	},
 	users: (root: any, args: any) => User.find({}),
-	user: (token: string) => User.find({token: token})
+	user: (token: string) => User.find({ token: token })
 };
 
 export { userController };
