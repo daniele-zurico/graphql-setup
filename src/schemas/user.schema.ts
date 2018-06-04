@@ -21,10 +21,12 @@ const userSchema: GraphQLSchema = makeExecutableSchema({
 			profilePicture: String
 		}
 		input USER_PAYLOAD {
-			displayName: String,
-			id: String,
-			idToken: String,
-			profilePicture: String
+			authDomain: String
+			authMethod:String
+			displayName:String
+			id:String
+			idToken:String
+			profilePicture:String
 		  }
 
 	`
