@@ -3,7 +3,7 @@ import { Types } from "mongoose";
 
 const userController = {
 	addUser: (root: any, args: any) => {
-		const user = new User({ name: args.name, surname: args.surname });
+		const user = new User(args);
 		return user.save();
 	},
 	deleteUser: (root: any, args: any) => User.deleteOne({ _id: args.id }),
@@ -13,7 +13,8 @@ const userController = {
 		return User.updateOne({ _id: args.id }, { $set: tempUser });
 	},
 	users: (root: any, args: any) => User.find({}),
-	user: (token: string) => User.find({ token: token })
+	user: (token: string) => User.find({ token: token }),
+	login: (root: any, args: any) => userController.addUser(root, args)
 };
 
 export { userController };
